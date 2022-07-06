@@ -27,9 +27,9 @@ This code is for analysis of RNA-seq and data visualization
 -def    cl: generate individual files for cluster in teh clust result.
             -tsv: file name of cluster info by clust analysis
             -dge: file name of digital gene expression
-        hmamp: generate clustered heat map
+        hmap: generate clustered heat map
             -consensus  consensus of names for multiple running
-        hmamp_fc: generate clustered heat map by fold change
+        hmap_fc: generate clustered heat map by fold change
             -consensus  consensus of names for multiple running
         bp: generate box plot
             -consensus  consensus of names for multiple running
@@ -152,7 +152,7 @@ elif option_dict['-def']=='vp':
 
 
 #_____________draw clusterd heat map______________________        
-elif option_dict['-def']=='hmamp' or option_dict['-def']=='hmamp_fc':
+elif option_dict['-def']=='hmap' or option_dict['-def']=='hmap_fc':
 
     name=option_dict['-consensus']
     file_list_row=os.listdir('.')
@@ -167,9 +167,9 @@ elif option_dict['-def']=='hmamp' or option_dict['-def']=='hmamp_fc':
         df = df.set_index(df.columns[0])
         df.head()
         
-        if option_dict['-def']=='hmamp':
+        if option_dict['-def']=='hmap':
             sns.clustermap(df, col_cluster=False,cmap=plt.cm.gist_heat_r, figsize=(4,8), method='average')
-        elif option_dict['-def']=='hmamp_fc':
+        elif option_dict['-def']=='hmap_fc':
             sns.clustermap(df, col_cluster=False,cmap=plt.cm.seismic,figsize=(4,8), method='average')
         plt.savefig(name[:-4]+'_heat_map.jpg', dpi=150, figsize=(4,4))
         plt.close()
