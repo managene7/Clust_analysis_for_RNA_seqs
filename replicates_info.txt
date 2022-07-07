@@ -1,0 +1,6 @@
+Col_Wounding_RNA_seq.txt	0h	Col0h_1, Col0h_2, Col0h_3
+Col_Wounding_RNA_seq.txt	6h	Col6h_1, Col6h_2, Col6h_3
+Col_Wounding_RNA_seq.txt	12h	Col12h_1, Col12h_2, Col12h_3
+Col_Wounding_RNA_seq.txt	24h	Col24h_1, Col24h_2, Col24h_3
+Col_Wounding_RNA_seq.txt	3d	Col3d_1, Col3d_2, Col3d_3
+Col_Wounding_RNA_seq.txt	5d	Col5d_1, Col5d_2, Col5d_3
