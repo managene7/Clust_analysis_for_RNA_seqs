@@ -2,7 +2,7 @@
 """
 Created on Sat May 16 00:56:30 2020
 
-@author: minkj
+@author: minkju3003@gmail.com (Minkyu Park)
 """
 
 
@@ -216,10 +216,7 @@ def write_converted_data(dge_file_name, data_dic_converted, gene_list, rep):
         if gene in data_dic_converted:
             out_file.write("\t".join(data_dic_converted[gene].split(','))+"\n")
 
-
-#___________draw boxplot________________________________    
-
-def boxplotting(consensus, w, h, dot, dpi):
+def boxplotting(consensus, w, h, dot, dpi):#__draw boxplot__ 
     dpi_value=int(dpi)
     dot_size=float(dot)
     width=float(w)
@@ -242,7 +239,7 @@ def boxplotting(consensus, w, h, dot, dpi):
         plt.savefig(name[:-4]+'_box_plot.jpg',dpi=dpi_value, figsize=(width,height))
         plt.close()
 
-def violin_plotting(consensus, w, h, dot, dpi):
+def violin_plotting(consensus, w, h, dot, dpi):#__draw violin plot__ 
     dpi_value=int(dpi)
     dot_size=float(dot)
     width=float(w)
@@ -265,9 +262,7 @@ def violin_plotting(consensus, w, h, dot, dpi):
         plt.savefig(name[:-4]+'_violin_plot.jpg',dpi=dpi_value, figsize=(width,height))
         plt.close()
 
-#_____________draw clusterd heat map______________________     
-
-def heatmap_plotting(def_option, w, h, consensus, dpi):
+def heatmap_plotting(def_option, w, h, consensus, dpi):#__draw heatmap__ 
     dpi_value=int(dpi)
     width=float(w)
     height=float(h)
