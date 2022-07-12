@@ -142,7 +142,8 @@ def process_dge_data(rep_file, data_dic, log2, min, cl_write):#__replicate info 
         rep_cont=[]
         for line in rep_read:
             line=line.strip().split('\t')
-            rep_list=list(map(lambda x: x.strip(), line[2].split(",")))
+            if line!=['']:
+                rep_list=list(map(lambda x: x.strip(), line[2].split(",")))
             index=[]
             for rep in rep_list:
                 index.append(sample_id_list.index(rep))
