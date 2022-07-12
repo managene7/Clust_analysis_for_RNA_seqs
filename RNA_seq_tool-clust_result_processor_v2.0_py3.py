@@ -29,12 +29,12 @@ This code is for analysis of RNA-seq and data visualization
             -dge        file name of digital gene expression
             -rep        file name of replicate info if applicable (option)
             -log2       yes => convert dge into log2 value, no => do not convert (default is 'no')
-        hmap: generate clustered heatmap
+        hmap: generate clustered heat map
             -consensus  consensus of names for multiple running
             -fig_w      width of the figure (default is 10)
             -fig_h      height of the figure (default is 20)
             -dpi        resolution of figure (default is 300)
-        hmap_fc: generate clustered heatmap by fold change
+        hmap_fc: generate clustered heat map by fold change
             -consensus  consensus of names for multiple running
             -fig_w      width of the figure (default is 10)
             -fig_h      height of the figure (default is 20)
@@ -109,7 +109,7 @@ def Parsing_dge_data(dge_file, log2, cl_write):
     #minimum_value=float(min)
     #__parsing dge data__
     data_file=open(dge_file,'r')
-    line=data_file.readline().split()
+    line=data_file.readline().strip().split('\t')
     new_first_line=(',').join(line) # generate head line
     data_dic['head']=new_first_line
     #__dge info parsing__
@@ -117,7 +117,7 @@ def Parsing_dge_data(dge_file, log2, cl_write):
         line=data_file.readline().strip()
         if line=="":
             break
-        line_list=line.split()
+        line_list=line.split('\t')
         #__filtering_with_min_value__
         if log2=="yes":
             if cl_write=="yes":
@@ -284,7 +284,7 @@ def heatmap_plotting(def_option, w, h, consensus, dpi):#__draw heatmap__
             sns.clustermap(df, col_cluster=False,cmap=plt.cm.gist_heat_r, method='average', figsize=(width,height))
         elif def_option=='hmap_fc':
             sns.clustermap(df, col_cluster=False,cmap=plt.cm.seismic, method='average',figsize=(width,height))
-        plt.savefig(name[:-4]+'_heatmap.jpg', dpi=dpi_value, figsize=(width,height))
+        plt.savefig(name[:-4]+'_heat_map.jpg', dpi=dpi_value, figsize=(width,height))
         plt.close()
 
 def main():
