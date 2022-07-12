@@ -29,12 +29,12 @@ This code is for analysis of RNA-seq and data visualization
             -dge        file name of digital gene expression
             -rep        file name of replicate info if applicable (option)
             -log2       yes => convert dge into log2 value, no => do not convert (default is 'no')
-        hmap: generate clustered heat map
+        hmap: generate clustered heatmap
             -consensus  consensus of names for multiple running
             -fig_w      width of the figure (default is 10)
             -fig_h      height of the figure (default is 20)
             -dpi        resolution of figure (default is 300)
-        hmap_fc: generate clustered heat map by fold change
+        hmap_fc: generate clustered heatmap by fold change
             -consensus  consensus of names for multiple running
             -fig_w      width of the figure (default is 10)
             -fig_h      height of the figure (default is 20)
@@ -284,7 +284,7 @@ def heatmap_plotting(def_option, w, h, consensus, dpi):#__draw heatmap__
             sns.clustermap(df, col_cluster=False,cmap=plt.cm.gist_heat_r, method='average', figsize=(width,height))
         elif def_option=='hmap_fc':
             sns.clustermap(df, col_cluster=False,cmap=plt.cm.seismic, method='average',figsize=(width,height))
-        plt.savefig(name[:-4]+'_heat_map.jpg', dpi=dpi_value, figsize=(width,height))
+        plt.savefig(name[:-4]+'_heatmap.jpg', dpi=dpi_value, figsize=(width,height))
         plt.close()
 
 def main():
