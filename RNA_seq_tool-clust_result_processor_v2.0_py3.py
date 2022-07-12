@@ -133,7 +133,7 @@ def Parsing_dge_data(dge_file, log2, cl_write):
 
 def process_dge_data(rep_file, data_dic, log2, min, cl_write):#__replicate info parsing__
     minimum_value=float(min)
-    print ("Calculate average dge of replicates..\n")
+    print ("Convert dge data..\n")
     if rep_file!="":
         rep_open=open(rep_file, 'r')
         rep_read=rep_open.readlines()
