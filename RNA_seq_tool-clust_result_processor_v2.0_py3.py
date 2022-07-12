@@ -28,7 +28,7 @@ This code is for analysis of RNA-seq and data visualization
             -clust      file name of cluster info by clust analysis (default is 'Clusters_Objects.tsv')
             -dge        file name of digital gene expression
             -rep        file name of replicate info if applicable (option)
-            -log2       yes => convert dge into log2 value, no => do not convert (default is no)
+            -log2       yes => convert dge into log2 value, no => do not convert (default is 'no')
         hmap: generate clustered heat map
             -consensus  consensus of names for multiple running
             -fig_w      width of the figure (default is 10)
@@ -55,7 +55,7 @@ This code is for analysis of RNA-seq and data visualization
         convert: convert replicates into single values by average (and log2 value). 
             -dge        file name of digital gene expression
             -rep        file name of replicate info (optional)
-            -log2       yes => convert dge into log2 value, no => do not convert (default is no)
+            -log2       yes => convert dge into log2 value, no => do not convert (default is 'no')
             -min        minimum value threshold of dges in each gene (default is 0)
 ___________________________________________________________________________________________
 """)
@@ -188,8 +188,7 @@ def process_dge_data(rep_file, data_dic, log2, min, cl_write):#__replicate info 
     data_dic=new_data_dic
     return data_dic
 
-def generate_clust_files(clust_dic, data_dic, log2):
-    #__generate clust files with dge data__
+def generate_clust_files(clust_dic, data_dic, log2):#__generate clust files with dge data__
     for cl, g_names in list(clust_dic.items()):
         cl_list=cl.split()
         cl_concatenated="_".join(cl_list)
